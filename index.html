@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explain your codes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" />
+
+</head>
+
+
+
+<body>
+    <nav>
+        <div class="header">
+            <div class="header-main">Explain your Code!</div>
+            <div class="sub-header">share with others</div>
+        </div>
+        <div class="contacts">
+            <a class="links" href="https://github.com/RiddhiDhara"><ion-icon name="logo-github"></ion-icon></a>
+            <a class="links" href="https://www.facebook.com/riddhi.dhara.73"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a class="links" href="https://www.instagram.com/riddhidhara/"><ion-icon name="logo-instagram"></ion-icon></a>
+            <a class="links" href="https://www.linkedin.com/in/riddhi-dhara-2003rd/"><ion-icon name="logo-linkedin"></ion-icon></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content" id="sections-container">
+            <div class="section">
+
+                <label for="heading-input" class="heading"># Heading</label>
+                <input class="heading-input" id="heading-input" placeholder="Enter text here."
+                    oninput="updateMarkdown()">
+
+                <label for="description-input" class="description"># Description</label>
+                <textarea class="description-input" id="description-input" rows="2" placeholder="Enter Description."
+                    oninput="updateMarkdown()"></textarea>
+
+                <div class="code-area">
+                    <label for="code-input" class="code"># Enter CODE</label>
+                    <select class="language" onchange="updateMarkdown()">
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="csharp">C#</option>
+                        <option value="cpp">C++</option>
+                        <option value="c">C</option>
+                        <option value="rust">Rust</option>
+                        <option value="swift">Swift</option>
+                        <option value="css">CSS</option>
+                        <option value="dart">Dart</option>
+                        <option value="go">GO</option>
+                        <option value="html">HTML</option>
+                        <option value="json">JSON</option>
+                        <option value="kotlin">Kotlin</option>
+                        <option value="markdown">Markdown</option>
+                        <option value="php">PHP</option>
+                        <option value="ruby">Ruby</option>
+                        <option value="sql">SQL</option>
+                        <option value="typescript">TypeScript</option>
+                        <option value="xml">XML</option>
+                    </select>
+                </div>
+                <textarea class="code-input" id="code-input" rows="5" placeholder="Write your code."
+                    oninput="updateMarkdown()"></textarea>
+
+                <div class="change-section-btn">
+                    <button class="add-section" onclick="addSection()">Add Section</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------- -->
+
+    <footer>
+        <div class="visual-container" id="visual-container">
+            <div class="mkd-section" id="mkd">
+                <div class="mkd-heading">Markdown</div>
+                <div class="mkd-text-area">
+                    <div class="mkd-txt" id="mkd-txt"></div>
+                </div>
+            </div>
+            <div class="pvw-section" id="pvw">
+                <div class="pvw-heading">Preview</div>
+                <div class="pvw-text-area">
+                    <div class="pvw-txt" id="pvw-txt"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="visual-holder">
+            <button class="markdown" onclick="openMarkdown()">Markdown</button>
+            <button class="download" onclick="downloadMarkdown()">Download</button>
+            <button class="preview" onclick="openPreview()">Preview</button>
+        </div>
+    </footer>
+
+
+
+    <!-- ------------------------------script--------------------------------- -->
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+    <!-- ----------------------------imported script files------------------- -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+    <!-- ----------------------------languages script files------------------- -->
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script> -->
+    <!-- c -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-c.min.js"></script>
+    <!-- c++ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <!-- c# -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-csharp.min.js"></script>
+    <!-- css -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+    <!-- dart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-dart.min.js"></script>
+    <!-- go -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
+    <!-- HTML -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+    <!-- java -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <!-- JSON -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <!-- kotlin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-kotlin.min.js"></script>
+    <!-- MKD -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markdown.min.js"></script>
+    <!-- PHP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-php.min.js"></script>
+    <!-- python -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <!-- ruby -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ruby.min.js"></script>
+    <!-- rust -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-rust.min.js"></script>
+    <!-- sql -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-sql.min.js"></script>
+    <!-- swift -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-swift.min.js"></script>
+    <!-- TS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+    <!-- xml -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-xml.min.js"></script>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
