@@ -16,14 +16,31 @@
 <body>
     <nav>
         <div class="header">
-            <div class="header-main">Explain your Code!</div>
-            <div class="sub-header">share with others</div>
+            <div class="header-main"><img src="photos/cODE.png" alt="logo"></div>
         </div>
-        <div class="contacts">
-            <a class="links" href="https://github.com/RiddhiDhara"><ion-icon name="logo-github"></ion-icon></a>
-            <a class="links" href="https://www.facebook.com/riddhi.dhara.73"><ion-icon name="logo-facebook"></ion-icon></a>
-            <a class="links" href="https://www.instagram.com/riddhidhara/"><ion-icon name="logo-instagram"></ion-icon></a>
-            <a class="links" href="https://www.linkedin.com/in/riddhi-dhara-2003rd/"><ion-icon name="logo-linkedin"></ion-icon></a>
+        <div class="utils">
+            <div class="social-trigger" id="social-trigger"><ion-icon name="share-social"></ion-icon></div>
+            <div class="social" id="social">
+                <a class="links" href="https://github.com/RiddhiDhara"><ion-icon name="logo-github"></ion-icon></a>
+                <a class="links" href="https://www.facebook.com/riddhi.dhara.73"><ion-icon
+                        name="logo-facebook"></ion-icon></a>
+                <a class="links" href="https://www.instagram.com/riddhidhara/"><ion-icon
+                        name="logo-instagram"></ion-icon></a>
+                <a class="links" href="https://www.linkedin.com/in/riddhi-dhara-2003rd/"><ion-icon
+                        name="logo-linkedin"></ion-icon></a>
+            </div>
+
+            <!-- local storage -->
+            
+            <div class="local" id="local">
+                <button class="local-btn" id="local-update" onclick="updateLocal()"><ion-icon
+                        name="arrow-up-outline">update</ion-icon></button>
+                <button class="local-btn" id="local-clear" onclick="clearLocal()"><ion-icon
+                        name="trash-outline">clear</ion-icon></button>
+                <button class="local-btn" id="local-load" onclick="loadLocal()"><ion-icon
+                        name="reload-outline">reload</ion-icon></button>
+            </div>
+            <div class="local-trigger" id="local-trigger"><ion-icon name="add-circle"></ion-icon></div>
         </div>
     </nav>
     <div class="container">
@@ -91,11 +108,12 @@
             </div>
         </div>
 
-        <div class="visual-holder">
+        <div class="visual-holder" id="visual-holder">
             <button class="markdown" onclick="openMarkdown()">Markdown</button>
             <button class="download" onclick="downloadMarkdown()">Download</button>
             <button class="preview" onclick="openPreview()">Preview</button>
         </div>
+        <div class="visual-circle" id="visual-circle"><ion-icon name="eye"></ion-icon></div>
     </footer>
 
 

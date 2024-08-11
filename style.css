@@ -16,14 +16,15 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 120px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 8px;
     border-radius: 10px;
-    box-shadow: 0px 3px 8px ;
+    box-shadow: 0px 3px 8px;
     flex-direction: column;
+    padding-top: 10px;
 }
 
 .header {
@@ -34,59 +35,87 @@ nav {
     text-align: center;
 }
 
-.header-main {
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.header-main{
+    background: #d2cfcc;
+    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid rgb(79, 77, 77);
+    box-shadow: 0px 3px 8px;
 }
 
-.sub-header {
-    font-size: 15px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.header-main img{
+    width: 200px;
+    height: 50px;
 }
 
-.contacts{
+/* ----------------------- */
+
+.utils{
    display: flex;
-   justify-content: space-around;
-   align-items: center;
-   text-align: center;
-   /* background-color: red; */
-   margin-top: 10px;
-   width: 40%;
-   min-width: 150px;
-   max-width: 300px;
+   justify-content: space-between;
+   align-items: end;
+   width: 95%;
+   height: 40%;
+   /* background-color: aqua; */
 }
 
-.links{
-    /* padding-right: 15px; */
+
+
+.social {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    /* background-color: red; */
+    margin-top: 10px;
+    min-width: 150px;
+    max-width: 300px;
+}
+
+.links {
     font-size: 2em;
     color: rgb(74, 71, 71);
     transition: 0.5s ease-in-out;
 }
 
-.links:hover{
+.links:hover {
     color: #000000;
 }
 
-.theme {
+.local{
     display: flex;
-    justify-content: space-between;
-    width: 80px;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    /* background-color: red; */
+    margin-top: 10px;
+    min-width: 150px;
+    max-width: 300px;
+    
 }
 
-.black {
-    background-color: rgb(0, 0, 0);
-    height: 20px;
-    width: 20px;
-    border: 2px solid black;
-    border-radius: 20px;
+.local-btn{
+    padding: 8px 10px;
+    border-radius: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(74, 71, 71);
+    color: antiquewhite;
 }
 
-.white {
-    background-color: rgb(255, 255, 255);
-    height: 20px;
-    width: 20px;
-    border: 2px solid black;
-    border-radius: 20px;
+.local-btn ion-icon{
+   font-size: 20px;
+}
+
+/* -----------------------triggers */
+
+.social-trigger{
+    font-size: 30px;
+    display: none;
+}
+
+.local-trigger{
+    font-size: 30px;
+    display: none;
 }
 
 /* ------------------------------ */
@@ -207,17 +236,33 @@ footer {
     z-index: 1000;
 }
 
-.visual-holder {
+.visual-circle{
     background-color: rgb(255, 255, 255);
     height: 40px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 40px;
+    box-shadow: 0px 3px 8px;
+}
+
+.visual-circle ion-icon{
+    font-size: 20px;
+}
+
+.visual-holder {
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    display: none;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     border-radius: 10px;
     width: 80%;
     padding: 0 20px;
-    box-shadow: 0px 3px 8px ;
+    box-shadow: 0px 3px 8px;
 }
 
 .visual-container {
@@ -230,7 +275,7 @@ footer {
     border-radius: 10px;
     width: 80%;
     padding: 0 20px;
-    box-shadow: 0px 3px 8px ;
+    box-shadow: 0px 3px 8px;
 }
 
 .mkd-section {
@@ -293,34 +338,42 @@ footer {
 
 /* For Webkit browsers (Chrome, Safari) */
 .mkd-txt::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scrollbar */
+    width: 10px;
+    /* Set the width of the scrollbar */
 }
 
 .mkd-txt::-webkit-scrollbar-track {
-    background-color: transparent; /* Make the track color transparent */
+    background-color: transparent;
+    /* Make the track color transparent */
 }
 
 .mkd-txt::-webkit-scrollbar-thumb {
-    background-color: #908f8f; /* Set the color of the slider */
-    border-radius: 3px; /* Add rounded corners to the slider */
+    background-color: #908f8f;
+    /* Set the color of the slider */
+    border-radius: 3px;
+    /* Add rounded corners to the slider */
 }
 
 /* For Webkit browsers (Chrome, Safari) */
 .pvw-txt::-webkit-scrollbar {
-    width: 10px; /* Set the width of the scrollbar */
+    width: 10px;
+    /* Set the width of the scrollbar */
 }
 
 .pvw-txt::-webkit-scrollbar-track {
-    background-color: transparent; /* Make the track color transparent */
+    background-color: transparent;
+    /* Make the track color transparent */
 }
 
 .pvw-txt::-webkit-scrollbar-thumb {
-    background-color: #908f8f; /* Set the color of the slider */
-    border-radius: 3px; /* Add rounded corners to the slider */
+    background-color: #908f8f;
+    /* Set the color of the slider */
+    border-radius: 3px;
+    /* Add rounded corners to the slider */
 }
 
 .markdown,
-.preview{
+.preview {
     padding: 5px 20px;
     border-radius: 10px;
     border: 0.5px solid black;
@@ -332,18 +385,43 @@ footer {
 .download{
     padding: 5px 20px;
     border-radius: 10px;
-    border: none;
+    /* border: none; */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #aaaaaa;
-    color: rgb(19, 19, 19);
+    background-color: rgb(74, 71, 71);
+    color: antiquewhite;
     font-weight: 500;
 }
 
 /* ------------------ */
 
 .pvw-txt pre {
-    background-color: white; /* Set the background color for code blocks */
-    padding: 10px; /* Add some padding */
-    border-radius: 5px; /* Optional: round the corners */
-    overflow: auto; /* Allow scrolling if the code is too long */
+    background-color: white;
+    /* Set the background color for code blocks */
+    padding: 10px;
+    /* Add some padding */
+    border-radius: 5px;
+    /* Optional: round the corners */
+    overflow: auto;
+    /* Allow scrolling if the code is too long */
+}
+
+/* ---------------------- */
+
+@media only screen and (max-width: 450px){
+    .social-trigger{
+        display: block;
+    }
+
+    .social{
+        display: none;
+    }
+    
+    .local-trigger{
+        display: block;
+    }
+
+    .local{
+        display: none;
+    }
+
 }
